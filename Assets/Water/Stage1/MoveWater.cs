@@ -14,7 +14,7 @@ public class MoveWater : MonoBehaviour
     {
         _moveSpeed = 0.005f;
         _playerPos = GameObject.Find("Player");
-        _moveWaterPos = GameObject.Find("動く水");
+        _moveWaterPos = GameObject.Find("MovingWater");
 
        
     }
