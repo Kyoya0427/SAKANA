@@ -5,16 +5,18 @@ using UnityEngine;
 public class MoveWater : MonoBehaviour
 {
     private float _moveSpeed;    //移動スピード
-    private bool  _isMove;       //移動するかしないか
+    private bool  _isMove;       //移動するかしないか 
+    private float _attenuation;
     GameObject    _playerPos;    //
-    GameObject    _moveWaterPos;
+    GameObject    _moveWater;
     Vector3       _velpcity;
     // Start is called before the first frame update
     void Start()
     {
-        _moveSpeed = 0.01f;
+        _moveSpeed = 1.0f;
+        _attenuation = 0.5f;
         _playerPos = GameObject.Find("Player");
-        _moveWaterPos = GameObject.Find("MovingWater");
+        _moveWater = GameObject.Find("MovingWater1");
         
        
     }
@@ -22,12 +24,16 @@ public class MoveWater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(_velpcity);
+        Debug.Log(_playerPos.transform.position);
+        Debug.Log(_moveWater.transform.position);
+
         if(_isMove == true)
         {
-            _velpcity += (_playerPos.transform.position - _moveWaterPos.transform.position) * _moveSpeed;
-            _velpcity = new Vector3(-_velpcity.x, 0.0f, 0.0f);
-            Debug.Log(_velpcity);
-            _moveWaterPos.transform.position += _velpcity;
+            _velpcity += (_playerPos.transform.position - _moveWater.transform.position) * _moveSpeed;
+            _velpcity *= _attenuation;
+            _velpcity = new Vector3(_velpcity.x, 0.0f, 0.0f);
+            _moveWater.transform.position += _velpcity * Time.deltaTime;
         }
     }
 

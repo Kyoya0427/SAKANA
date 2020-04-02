@@ -44,7 +44,6 @@ public class FishProduction : MonoBehaviour
             {
                 _createInterval = 0.0f;
                 Instantiate(_enemy, this.transform.position, Quaternion.identity);
-                Debug.Log(this.transform.position);
             }
         }
 
@@ -54,7 +53,7 @@ public class FishProduction : MonoBehaviour
     {
 
         tagObjects = GameObject.FindGameObjectsWithTag(tagname);
-        Debug.Log(tagObjects.Length); //tagObjects.Lengthはオブジェクトの数
+        //Debug.Log(tagObjects.Length); //tagObjects.Lengthはオブジェクトの数
         _enemyCount = tagObjects.Length;
     }
 }
