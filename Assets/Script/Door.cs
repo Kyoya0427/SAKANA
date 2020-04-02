@@ -9,7 +9,7 @@ public class Door : MonoBehaviour
     //Sprite
     Sprite m_sprite;
     //true 動く, false 止まる
-    bool move = false;
+    public bool move = false;
     //初期位置
     Vector2 firstPos;
     //扉の移動先

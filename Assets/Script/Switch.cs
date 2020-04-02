@@ -7,7 +7,9 @@ public class Switch : MonoBehaviour
     //一度だけ押すだけで開く true, 押してる間だけ開く false
     public bool once = false;
     //対応するドア
-    public GameObject door = null;
+    public Door door = null;
+    //対応する床
+    public Floor floor = null;
     //押されているか
     bool pushed = false;
 
@@ -40,7 +42,16 @@ public class Switch : MonoBehaviour
             pushed = true;
 
             //扉を開ける
-            door.GetComponent<Door>().ToMove(true);
+            if (door != null)
+            {
+               door.ToMove(true);
+            }
+
+            //スイッチ式の床を伸ばす
+            if(floor != null)
+            {
+                floor.ToMove(true);
+            }
         }
     }
 
