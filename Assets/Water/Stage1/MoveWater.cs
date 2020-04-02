@@ -12,10 +12,10 @@ public class MoveWater : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _moveSpeed = 0.005f;
+        _moveSpeed = 0.01f;
         _playerPos = GameObject.Find("Player");
         _moveWaterPos = GameObject.Find("MovingWater");
-
+        
        
     }
 
@@ -25,8 +25,9 @@ public class MoveWater : MonoBehaviour
         if(_isMove == true)
         {
             _velpcity += (_playerPos.transform.position - _moveWaterPos.transform.position) * _moveSpeed;
-            _velpcity = new Vector3(_velpcity.x, 0.0f, 0.0f);
-            _moveWaterPos.transform.position += _velpcity *Time.deltaTime;
+            _velpcity = new Vector3(-_velpcity.x, 0.0f, 0.0f);
+            Debug.Log(_velpcity);
+            _moveWaterPos.transform.position += _velpcity;
         }
     }
 
