@@ -1782,6 +1782,33 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 890067850}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &837950060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 955183063743268780, guid: 825f0e013079615469ccb56323573ca4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1717292509}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &837950063
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837950060}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!4 &847871492 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 870733212115859230, guid: 453b0a90831d16f4e8303a2d6971ec7b,
@@ -7809,7 +7836,7 @@ PrefabInstance:
     - target: {fileID: 955183063743268780, guid: 825f0e013079615469ccb56323573ca4,
         type: 3}
       propertyPath: m_Name
-      value: MovingWater
+      value: MovingWater1
       objectReference: {fileID: 0}
     - target: {fileID: 5761813705279979525, guid: 825f0e013079615469ccb56323573ca4,
         type: 3}
