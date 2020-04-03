@@ -24,10 +24,6 @@ public class MoveWater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(_velpcity);
-        Debug.Log(_playerPos.transform.position);
-        Debug.Log(_moveWater.transform.position);
-
         if(_isMove == true)
         {
             _velpcity += (_playerPos.transform.position - _moveWater.transform.position) * _moveSpeed;
